@@ -1,0 +1,38 @@
+#Typing Test
+
+import time
+from time import time
+
+print "WELCOME TO TYPING TEST: \n"
+
+a = """
+This is Tutorial to Typing test where you can estimate the time taken by you
+in WPM. Typing Speed is essential for all computer engineers. I had used time module
+from Python to estimate your Typing Speed. So lets GET Started to this Amazing Fun of
+typing. Type the character as shown exactly similar to written over here. At the end
+you are going to get your Desired Results."""
+
+print a
+
+print "TYPE the same paragraph as shown"
+
+raw_input("PRESS any key to Continue: \n")
+
+print "YOUR time Starts"
+
+start = time()
+
+b = raw_input()
+
+end = time()
+
+if b == a:
+    print "Ahh! You typed correctly"
+
+else:
+    print "RETRY! The test again to improve your Accuracy!"
+
+total = round(end - start, 2)
+
+print "Your Typing time is: ",total
+print "Your WPM Speed is ",total/60
