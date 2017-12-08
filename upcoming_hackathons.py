@@ -1,10 +1,10 @@
-import requests
-from bs4  import BeautifulSoup
+import requests    #imports request
+from bs4  import BeautifulSoup  #imports BeautifulSoup
 
-req = requests.get('https://hackevents.co/hackathons')
+req = requests.get('https://hackevents.co/hackathons') #fetch request from url
 soup = BeautifulSoup(req.text, 'lxml')
 
-hack = soup.find_all('div', {'class': 'hackathon'})
+hack = soup.find_all('div', {'class': 'hackathon'}) #finds all element with div class equal hackathon
 
 print("{:<5} {:<15}: {:<90} : {}, {}\n".format('Sr.No.', 'Date', 'Name of Hackathon', 'City', 'Country'))
 
@@ -20,4 +20,5 @@ for i, f in enumerate(hack, 1):
     city = f.find('div', {'class': 'info'}).find('p').find('span', {'class': 'city'}).text.strip()
     country = f.find('div', {'class': 'info'}).find('p').find('span', {'class': 'country'}).text.strip()
 
-    print("{:<5} {:<15} : {:<90} : {}, {}\n".format(str(i)+')', display, name.title(), city, country))
+    print("{:<5} {:<15} : {:<90} : {}, {}\n".format(str(i)+')', display, name.title(), city, country))  #print it out
+
